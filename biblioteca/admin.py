@@ -13,13 +13,13 @@ class CategoriaAdmin(admin.ModelAdmin):
 
 @admin.register(Llibre)
 class LlibreAdmin(admin.ModelAdmin):
-    list_display = ('titol', 'autor', 'categoria', 'prestat')
+    list_display = ('titol', 'descripcio', 'isbn', 'autor', 'categoria', 'prestat')
     list_filter = ('prestat', 'categoria')
     search_fields = ('titol', 'isbn')
 
 @admin.register(Alumne)
 class AlumneAdmin(admin.ModelAdmin):
-    list_display = ('usuari', 'idalu', 'curs')
+    list_display = ('usuari', '__str__', 'idalu', 'curs')
     search_fields = ('usuari__username', 'idalu')
 
 @admin.register(Prestec)
