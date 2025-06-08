@@ -1,0 +1,18 @@
+<h2>Prestar un llibre</h2>
+<form method="post">
+  {% csrf_token %}
+  <label>Llibre:</label>
+  <select name="llibre_id">
+    {% for llibre in llibres %}
+      <option value="{{ llibre.id }}">{{ llibre.titol }}</option>
+    {% endfor %}
+  </select><br>
+  <label>Alumne:</label>
+  <select name="alumne_id">
+    {% for alumne in alumnes %}
+      <option value="{{ alumne.id }}">{{ alumne }}</option>
+    {% endfor %}
+  </select><br>
+  <button type="submit">Prestar</button>
+</form>
+<a href="{% url 'menu_principal' %}">Tornar al menú</a>

@@ -1,0 +1,12 @@
+<h2>Tornar un llibre</h2>
+<form method="post">
+  {% csrf_token %}
+  <label>Selecciona el préstec a tornar:</label>
+  <select name="prestec_id">
+    {% for prestec in prestecs %}
+      <option value="{{ prestec.id }}">{{ prestec.llibre }} - {{ prestec.alumne }}</option>
+    {% endfor %}
+  </select><br>
+  <button type="submit">Tornar</button>
+</form>
+<a href="{% url 'menu_principal' %}">Tornar al menú</a>

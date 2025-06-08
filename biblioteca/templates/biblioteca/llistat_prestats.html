@@ -1,0 +1,9 @@
+<h2>Llibres prestats</h2>
+<ul>
+  {% for prestec in prestecs %}
+    <li>{{ prestec.llibre }} prestat a {{ prestec.alumne }} el {{ prestec.data_prestec }}</li>
+  {% empty %}
+    <li>No hi ha llibres prestats actualment.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'menu_principal' %}">Tornar al menú</a>
