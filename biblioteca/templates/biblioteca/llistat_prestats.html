@@ -1,9 +1,25 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'biblioteca.css' %}">
+
 <h2>Llibres prestats</h2>
-<ul>
-  {% for prestec in prestecs %}
-    <li>{{ prestec.llibre }} prestat a {{ prestec.alumne }} el {{ prestec.data_prestec }}</li>
-  {% empty %}
-    <li>No hi ha llibres prestats actualment.</li>
-  {% endfor %}
-</ul>
-<a href="{% url 'menu_principal' %}">Tornar al menú</a>
+{% if prestecs %}
+<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr><th>Títol</th><th>Alumne</th><th>Curs</th><th>Data de préstec</th></tr>
+  </thead>
+  <tbody>
+    {% for prestec in prestecs %}
+    <tr>
+      <td>{{ prestec.llibre.titol }}</td>
+      <td>{{ prestec.alumne }}</td>
+      <td>{{ prestec.alumne.curs }}</td>
+      <td>{{ prestec.data_prestec }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  <p>No hi ha llibres prestats actualment.</p>
+{% endif %}
+
+<a href="{% url 'menu_principal' %}">Tornar al menú principal</a>

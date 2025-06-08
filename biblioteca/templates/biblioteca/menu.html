@@ -1,6 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'biblioteca.css' %}">
+
 <h1>Biblioteca SaPa</h1>
-<ul>
-  <li><a href="{% url 'prestar_llibre' %}">Prestar un llibre</a></li>
-  <li><a href="{% url 'tornar_llibre' %}">Tornar un llibre</a></li>
-  <li><a href="{% url 'llistats_prestats' %}">Llibres prestats</a></li>
-</ul>
+
+<div class="menu">
+  <a href="{% url 'prestar_llibre' %}" class="btn">Prestar un llibre</a>
+  <a href="{% url 'tornar_llibre' %}" class="btn">Tornar un llibre</a>
+  <a href="{% url 'llistat_prestats' %}" class="btn">Veure llibres prestats</a>
+</div>

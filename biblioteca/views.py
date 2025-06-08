@@ -39,4 +39,3 @@ def tornar_llibre(request):
 def llistat_prestats(request):
     prestecs = Prestec.objects.filter(data_devolucio__isnull=True)
     return render(request, 'biblioteca/llistat_prestats.html', {'prestecs': prestecs})
-    

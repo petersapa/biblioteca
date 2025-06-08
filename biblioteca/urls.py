@@ -23,5 +23,5 @@ urlpatterns = [
     path('', views.menu_principal, name='menu_principal'),
     path('prestar/', views.prestar_llibre, name='prestar_llibre'),
     path('tornar/', views.tornar_llibre, name='tornar_llibre'),
-    path('prestats/', views.llistat_prestats, name='llistats_prestats'),
+    path('prestats/', views.llistat_prestats, name='llistat_prestats'),
 ]
